@@ -668,7 +668,7 @@ window.MutationObserver = window.MutationObserver ||
         var element_tag_directives = [],
             element_class_directives = [],
             element_attribute_directives = [],
-            element_class_list = (element.className || '').toLowerCase().split(' ');
+            element_class_list = ((typeof element.className === 'string' ? element.className : undefined) || '').toLowerCase().split(' ');
         directive_list.forEach(function (directive) {
             if (element.tagName.toLowerCase() === directive.name)
                 element_tag_directives.push(directive);
